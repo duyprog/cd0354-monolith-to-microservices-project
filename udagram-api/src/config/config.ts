@@ -1,8 +1,8 @@
 export const config = {
-  'username': process.env.POSTGRES_USERNAME,
-  'password': process.env.POSTGRES_PASSWORD,
-  'database': process.env.POSTGRES_DB,
-  'host': process.env.POSTGRES_HOST,
+  'username': "postgres",
+  'password': "duyatt123",
+  'database': "udagram",
+  'host': 'udagram.c98ikvysumgl.ap-southeast-1.rds.amazonaws.com',
   'dialect': 'postgres',
   'aws_region': process.env.AWS_REGION,
   'aws_profile': process.env.AWS_PROFILE,
