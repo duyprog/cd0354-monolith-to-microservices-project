@@ -11,7 +11,7 @@ script:
   - docker tag udagram-api-feed duypk2000/udagram-api-feed:v1
   - docker tag udagram-api-user duypk2000/udagram-api-user:v1
   - docker tag udagram-frontend duypk2000/udagram-frontend:v1
-  - docker tag reverseproxy duypk2000/reverseproxy
+  - docker tag reverseproxy duypk2000/reverseproxy:v1
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push duypk2000/udagram-api-feed:v1
