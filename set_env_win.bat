@@ -1,0 +1,9 @@
+setx POSTGRES_USERNAME postgres
+setx POSTGRES_PASSWORD duyatt123
+setx POSTGRES_HOST udagram.c98ikvysumgl.ap-southeast-1.rds.amazonaws.com
+setx POSTGRES_DB udagram
+setx AWS_BUCKET arn:aws:s3:::duypk5-udagram-eks
+setx AWS_REGION ap-southeast-1
+setx AWS_PROFILE default
+setx JWT_SECRET testing
+setx URL http://localhost:8100
