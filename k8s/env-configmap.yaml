@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: udagram-configmap
 data: 
-  POSTGRES_HOST: udagram.c98ikvysumgl.ap-southeast-1.rds.amazonaws.com
+  POSTGRES_HOST: cdrx.c5hpqtq8asl6.ap-southeast-1.rds.amazonaws.com
   POSTGRES_DB: udagram
-  AWS_BUCKET: duypk5-udagram-eks
+  AWS_BUCKET: duypk5-udagram-dev
   AWS_REGION: ap-southeast-1
   AWS_PROFILE: default
   JWT_SECRET: testing
