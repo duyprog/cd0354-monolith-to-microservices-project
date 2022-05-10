@@ -16,12 +16,12 @@ spec:
         - name: backend-feed-container 
           image: duypk2000/udagram-api-feed:v1
           resources:
+            requests:
+              memory: "500Mi"
+              cpu: "250m"
             limits:
-              memory: "128Mi"
-              cpu: "200m"
-          envFrom:
-            - configMapRef:
-                name: udagram-configmap
+              memory: "1Gi"
+              cpu: "500m"
           env:
             - name: POSTGRES_PASSWORD
               valueFrom:
@@ -33,11 +33,46 @@ spec:
                 secretKeyRef:
                   name: env-secret
                   key: POSTGRES_USERNAME
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  key: POSTGRES_DB
+                  name: udagram-configmap
+            - name: AWS_BUCKET
+              valueFrom:
+                configMapKeyRef:
+                  key: AWS_BUCKET
+                  name: udagram-configmap
+            - name: POSTGRES_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: POSTGRES_HOST
+                  name: udagram-configmap
+            - name: AWS_REGION
+              valueFrom:
+                configMapKeyRef:
+                  key: AWS_REGION
+                  name: udagram-configmap
+            - name: AWS_PROFILE
+              valueFrom:
+                configMapKeyRef:
+                  key: AWS_PROFILE
+                  name: udagram-configmap
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  key: JWT_SECRET
+                  name: udagram-configmap
+            - name: URL
+              valueFrom:
+                configMapKeyRef:
+                  key: URL
+                  name: udagram-configmap                                                 
           volumeMounts:
             - mountPath: "/root/.aws"
               name: "aws-secret"
               readOnly: true
-      restartPolicy: Always
+      #restartPolicy: Always
       volumes:
         - name: aws-secret
           secret:
